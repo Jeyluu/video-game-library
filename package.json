@@ -1,0 +1,27 @@
+{
+  "name": "video-game-library",
+  "version": "1.0.0",
+  "description": "projet pour vendredi",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mongoose": "^5.11.13",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeyluu/video-game-library.git"
+  },
+  "author": "jeremy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeyluu/video-game-library/issues"
+  },
+  "homepage": "https://github.com/Jeyluu/video-game-library#readme"
+}
