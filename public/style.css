@@ -1,6 +1,16 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: aquamarine;
+    font-family: 'Changa', sans-serif;
+    
+}
+
+.titre-homepage{
+    
+    text-align: center;
+}
+
+footer{
+    text-align: center;
 }
 

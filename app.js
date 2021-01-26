@@ -8,13 +8,12 @@ const port = 1000;
 
 
 
-//CONTROLLERS IMPORT
-
-const homePage = require('./controllers/homepage');
-
-
+/* -------------------------------------------------------------------------------------------- */
+//EXPRESS-STATIC
+app.use(express.static('public'));
 
 //BODY PARSER
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -32,11 +31,25 @@ mongoose.connect('mongodb://localhost:27017/videoGame',{
     useCreateIndex: true
 })
 
+/* -------------------------------------------------------------------------------------------- */
+
+
+//CONTROLLERS IMPORT
+const homePage = require('./controllers/homepage');
+const addagame = require('./controllers/addgame');
+const postagame = require('./controllers/postgame');
+
+
 //ROUTES
 
-app.get('/', homePage)
+app.get('/', homePage);
+
+//Jeu & Produits
+app.get('/jeu/ajout', addagame) // le premier argument est ce que nous mettons dans la navbar
+app.post('/jeu/publication', postagame)
 
 
+//Utilisateur & client
 
 
 app.listen(port, () => {

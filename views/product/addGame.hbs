@@ -1,0 +1,50 @@
+<div class="container">
+    <form action="/jeu/publication" method="POST"><!--  dans action nous mettons l'url qui est dans le app.js methode post-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nom du jeu</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Le nom du jeu"
+                        name="nom">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Catégorie du jeu</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Le genre de jeu"
+                        name="categorie">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Plateforme du jeu</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Sur quelle console ce joue le jeu" name="plateforme">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Prix</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Entrer le prix"
+                        name="prix">
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Petite Description du jeu</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
+        </div>
+    
+        <div class="mb-3">
+            <button class="btn btn-success">Valider son entrée en stock</button>
+            <button class="btn btn-link">Annuler</button>
+        </div>
+    </form>
+
+</div>
