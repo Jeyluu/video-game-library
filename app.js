@@ -47,13 +47,17 @@ mongoose.connect('mongodb://localhost:27017/videoGame',{
 const articleValidPost = require('./middleware/gamevalidpost')
 app.use("/articles/post",articleValidPost)
 
-//CONTROLLERS IMPORT
+//CONTROLLERS ARTICLE
 const homePage = require('./controllers/homepage');
 const addagame = require('./controllers/addgame');
 const postagame = require('./controllers/postgame');
 const geteditagame = require('./controllers/geteditgame')
 const editagame = require('./controllers/editgame')
 const deleteOnegame = require('./controllers/deletegame')
+
+//CONTROLLERS UTILISATEUR
+const adduser = require('./controllers/adduser')
+
 
 //ROUTES
 
@@ -69,7 +73,7 @@ app.delete('/jeu/:id', deleteOnegame)
 
 
 //Utilisateur & client
-
+app.get('/inscription',adduser)
 
 app.listen(port, () => {
     console.log(`Connexion au port ${port}, le ${new Date().toLocaleString()}`);
