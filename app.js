@@ -5,6 +5,8 @@ const exphbs = require('express-handlebars')
 const Handlebars = require('handlebars')
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 const override = require('method-override')
+const fileUpload = require('express-fileupload')
+
 
 const app = express();
 const port = 1000;
@@ -14,6 +16,9 @@ const port = 1000;
 /* -------------------------------------------------------------------------------------------- */
 //EXPRESS-STATIC
 app.use(express.static('public'));
+
+//EXPRESS-FILE UPLOAD
+app.use(fileUpload())
 
 //Method-override
 app.use(override("_method"));

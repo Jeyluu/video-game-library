@@ -1,5 +1,8 @@
-<div class="container">
-    <form action="/jeu/publication" method="POST">
+<div class="container mt-2">
+
+    <!-- Section ajout de jeu au catalogue -->
+
+    <form action="/jeu/publication" method="POST" enctype="multipart/form-data">
         <!--  dans action nous mettons l'url qui est dans le app.js methode post-->
         <div class="row">
             <div class="col-md-12">
@@ -41,12 +44,20 @@
             <label for="exampleFormControlTextarea1" class="form-label">Petite Description du jeu</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
         </div>
+        
+        <div class="form-group">
+            <input type="file" class="form-control-file mb-2" id="exampleFormControlFile1" name="image">
+        </div>
+        
 
         <div class="mb-3">
             <button class="btn btn-success">Valider son entrée en stock</button>
             <button class="btn btn-link">Annuler</button>
         </div>
     </form>
+
+
+<!-- Section gestion des ventes de jeux -->
 
     <div class="modification">
 

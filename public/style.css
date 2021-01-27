@@ -9,12 +9,19 @@ body{
     background-color: rgb(255, 177, 81);
 }
 
+.nav-link {
+    color:#fff;
+}
 .titre-homepage{
     
     text-align: center;
 }
 
 footer{
+    margin-top: 80px;
     text-align: center;
+    background-color: #272727;
+    color: #fff;
+    height: 20vh;
 }
 

@@ -1,9 +1,24 @@
 const Game = require('../models/products')
+const path = require('path')
 
 module.exports = (req, res) => {
-
-    Game.create(req.body, (err, post) => {
-        res.redirect('/')
-    })
     
+    //Nous permet de stocker les images dans public / images 
+    const { image } = req.files
+    const uploadFile = path.resolve(__dirname,'..', 'public/images', image.name);
+
+    image.mv(uploadFile, (error) => {
+
+        Game.create(
+            {
+                ...req.body,
+                image : `/images/${image.name}`
+            }
+
+            , (err, post) => {
+                    res.redirect('/')
+                }
+            
+        )
+    })
 }
