@@ -57,7 +57,7 @@ const deleteOnegame = require('./controllers/deletegame')
 
 //CONTROLLERS UTILISATEUR
 const adduser = require('./controllers/adduser')
-
+const userregister = require('./controllers/registeruser')
 
 //ROUTES
 
@@ -74,6 +74,11 @@ app.delete('/jeu/:id', deleteOnegame)
 
 //Utilisateur & client
 app.get('/inscription',adduser)
+app.post('/inscription/utilisateur', userregister)
+
+
+
+
 
 app.listen(port, () => {
     console.log(`Connexion au port ${port}, le ${new Date().toLocaleString()}`);
