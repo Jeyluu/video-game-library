@@ -18,7 +18,8 @@ body{
 }
 
 .card{
-    height: 90%;
+    width: 300px;
+    
 }
 
 .card-img-top{

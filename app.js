@@ -43,7 +43,9 @@ mongoose.connect('mongodb://localhost:27017/videoGame',{
 })
 
 /* -------------------------------------------------------------------------------------------- */
-
+//MIDDLEWARE
+const articleValidPost = require('./middleware/gamevalidpost')
+app.use("/articles/post",articleValidPost)
 
 //CONTROLLERS IMPORT
 const homePage = require('./controllers/homepage');
