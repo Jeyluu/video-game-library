@@ -11,6 +11,7 @@ module.exports = (req, res) => {
 
         Game.create(
             {
+                //Pour enregister l'image dans la Base de Données
                 ...req.body,
                 image : `/images/${image.name}`
             }

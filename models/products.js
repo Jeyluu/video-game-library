@@ -6,6 +6,7 @@ const gameSchema = new mongoose.Schema({
     plateforme:String,
     prix: Number,
     description:String,
+    image:String,
     createDate: {
         type: Date,
         default: new Date()
