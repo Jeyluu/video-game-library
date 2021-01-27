@@ -1,5 +1,9 @@
+const Game = require('../models/products')
 
 module.exports = (req, res) => {
-    console.log(req.body);
-    res.redirect('/')
+
+    Game.create(req.body, (err, post) => {
+        res.redirect('/')
+    })
+    
 }

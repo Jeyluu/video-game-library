@@ -1,5 +1,6 @@
 <div class="container">
-    <form action="/jeu/publication" method="POST"><!--  dans action nous mettons l'url qui est dans le app.js methode post-->
+    <form action="/jeu/publication" method="POST">
+        <!--  dans action nous mettons l'url qui est dans le app.js methode post-->
         <div class="row">
             <div class="col-md-12">
                 <div class="mb-3">
@@ -40,11 +41,35 @@
             <label for="exampleFormControlTextarea1" class="form-label">Petite Description du jeu</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="description"></textarea>
         </div>
-    
+
         <div class="mb-3">
             <button class="btn btn-success">Valider son entrée en stock</button>
             <button class="btn btn-link">Annuler</button>
         </div>
     </form>
+
+    <div class="modification">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="text-align:center">Les jeux publiés en stock</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <h3>Jeu</h3>
+                                {{#each posts}}
+                                    <li class="list-group-item"><a href="{{id}}">{{nom}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
 
 </div>

@@ -2,6 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
+const Handlebars = require('handlebars')
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 const app = express();
 const port = 1000;
@@ -20,7 +22,7 @@ app.use(bodyParser.urlencoded({
 
 //EXPRESS HANDLEBARS
 // Handlebars
-app.engine('hbs', exphbs({defaultLayout: 'main', extname: 'hbs'}));
+app.engine('hbs', exphbs({defaultLayout: 'main', extname: 'hbs', handlebars: allowInsecurePrototypeAccess(Handlebars)}));
 app.set('view engine', 'hbs')
 
 // CONNECTION MONGO
@@ -47,6 +49,7 @@ app.get('/', homePage);
 //Jeu & Produits
 app.get('/jeu/ajout', addagame) // le premier argument est ce que nous mettons dans la navbar
 app.post('/jeu/publication', postagame)
+//Methode Put
 
 
 //Utilisateur & client

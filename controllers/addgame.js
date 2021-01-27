@@ -1,5 +1,9 @@
+const Game = require('../models/products')
 
+module.exports = async (req, res) => {
 
-module.exports = (req, res) => {
-    res.render('product/addGame') // le fichier entre parenthèse est dans la views products
+    const posts = await Game.find({})
+    
+    res.render('product/addGame', { posts })
+    
 }

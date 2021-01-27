@@ -1,3 +1,8 @@
-module.exports = (req, res) => {
-    res.render('home')
+const Game = require('../models/products')
+
+module.exports = async (req, res) => {
+
+    const posts = await Game.find({})
+    
+    res.render('home', { posts })
 }
