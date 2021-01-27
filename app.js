@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const Handlebars = require('handlebars')
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
+const override = require('method-override')
 
 const app = express();
 const port = 1000;
@@ -13,6 +14,9 @@ const port = 1000;
 /* -------------------------------------------------------------------------------------------- */
 //EXPRESS-STATIC
 app.use(express.static('public'));
+
+//Method-override
+app.use(override("_method"));
 
 //BODY PARSER
 app.use(bodyParser.json());
@@ -29,7 +33,7 @@ app.set('view engine', 'hbs')
 mongoose.connect('mongodb://localhost:27017/videoGame',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
+    useFindAndModify: true,
     useCreateIndex: true
 })
 
@@ -40,7 +44,9 @@ mongoose.connect('mongodb://localhost:27017/videoGame',{
 const homePage = require('./controllers/homepage');
 const addagame = require('./controllers/addgame');
 const postagame = require('./controllers/postgame');
-
+const geteditagame = require('./controllers/geteditgame')
+const editagame = require('./controllers/editgame')
+const deleteOnegame = require('./controllers/deletegame')
 
 //ROUTES
 
@@ -49,7 +55,10 @@ app.get('/', homePage);
 //Jeu & Produits
 app.get('/jeu/ajout', addagame) // le premier argument est ce que nous mettons dans la navbar
 app.post('/jeu/publication', postagame)
-//Methode Put
+app.get('/jeu/:id',geteditagame)
+app.put('/jeu/:id',editagame)
+app.delete('/jeu/:id', deleteOnegame)
+
 
 
 //Utilisateur & client
