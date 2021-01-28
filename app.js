@@ -73,6 +73,12 @@ const articleValidPost = require('./middleware/gamevalidpost')
 app.use("/articles/post",articleValidPost)
 const connexion = require('./middleware/connexion')
 app.use('/jeu/ajout', connexion)
+app.use('*', (req, res , next) => {
+    res.locals.user = req.session.userId;
+    console.log(res.locals.user);
+    next()
+} )
+
 
 //CONTROLLERS ARTICLE
 const homePage = require('./controllers/homepage');
@@ -87,7 +93,7 @@ const adduser = require('./controllers/adduser')
 const userregister = require('./controllers/registeruser')
 const displaylogin = require('./controllers/displaylogin')
 const userlogin = require('./controllers/postloginuser')
-
+const userLogout = require('./controllers/userLogout')
 
 //ROUTES
 
@@ -103,11 +109,11 @@ app.delete('/jeu/:id', deleteOnegame)
 
 
 //Utilisateur & client
-app.get('/inscription',adduser)
+app.get('/inscription', adduser)
 app.post('/inscription/utilisateur', userregister)
 app.get('/connexion', displaylogin)
 app.post('/connexion/utilisateur', userlogin)
-
+app.get('/deconnexion', userLogout )
 
 
 app.listen(port, () => {

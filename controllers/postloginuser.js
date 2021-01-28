@@ -7,10 +7,11 @@ module.exports = (req, res) => {
 
     usermodel.findOne({ email }, (err, user) => {
         if (user) {
-
+            
             bcrypt.compare(motdepasse, user.motdepasse, (err, same) => {
                 if (same) {
                     req.session.userId = user._id
+                    
                     res.redirect('/')
                 }
                 else {
