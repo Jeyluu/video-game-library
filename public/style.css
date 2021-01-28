@@ -42,6 +42,18 @@ body{
 
 }
 
+/* inscription */
+
+.password-register{
+
+    margin-right: 325px
+
+}
+
+.cgu {
+    display: flex;
+    justify-content: center;
+}
 
 /* connexion */
 

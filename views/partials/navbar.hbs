@@ -1,30 +1,36 @@
+<nav class="navbar navbar-expand-lg" style="background-color:#272727; height:10vh">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/" style="color:#fff"> VGames <i class="fas fa-dice-d20"></i> Library</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/connexion">Se connecter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/inscription">S'inscrire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Nous contacter</a>
+                </li>
 
-    <nav class="navbar navbar-expand-lg" style="background-color:#272727; height:10vh">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/" style="color:#fff"> VGames <i class="fas fa-dice-d20"></i> Library</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/connexion">Se connecter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/inscription">S'inscrire</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/jeu/ajout">Administrateur</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Notre support</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Mon compte</a>
-                    </li>
-                </ul>
-            </div>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false"><i class="fas fa-user"></i> Mon compte</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Profil</a></li>
+                        <li><a class="dropdown-item" href="/jeu/ajout">Administration</a></li>
+                        <li><a class="dropdown-item" href="#">Achat</a></li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Deconnexion</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
