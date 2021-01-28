@@ -1,0 +1,25 @@
+<div class="container">
+    <form action="/connexion/utilisateur" method="POST">
+
+
+        <div class="mb-3 mt-5 row">
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="staticEmail" name="email" value="email@example.com">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Mot de passe</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" id="inputPassword" name="motdepasse">
+            </div>
+        </div>
+        <div class="oublie">
+            <a class="link-connexion" href="">mot de passe oublié?</a>
+            <a class="link-connexion" href="/inscription">Vous n'êtes pas encore inscrit?</a>
+        </div>
+        <div class="boutons">
+            <button class="btn btn-primary">Connexion</button>
+        </div>
+    </form>
+</div>

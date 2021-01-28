@@ -8,6 +8,7 @@ const override = require('method-override')
 const fileUpload = require('express-fileupload')
 
 
+
 const app = express();
 const port = 1000;
 
@@ -58,6 +59,8 @@ const deleteOnegame = require('./controllers/deletegame')
 //CONTROLLERS UTILISATEUR
 const adduser = require('./controllers/adduser')
 const userregister = require('./controllers/registeruser')
+const displaylogin = require('./controllers/displaylogin')
+const userlogin = require('./controllers/postloginuser')
 
 //ROUTES
 
@@ -75,8 +78,8 @@ app.delete('/jeu/:id', deleteOnegame)
 //Utilisateur & client
 app.get('/inscription',adduser)
 app.post('/inscription/utilisateur', userregister)
-
-
+app.get('/connexion', displaylogin)
+app.post('/connexion/utilisateur', userlogin)
 
 
 
