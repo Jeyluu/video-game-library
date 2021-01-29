@@ -75,7 +75,7 @@ const connexion = require('./middleware/connexion')
 app.use('/jeu/ajout', connexion)
 app.use('*', (req, res , next) => {
     res.locals.user = req.session.userId;
-    console.log(res.locals.user);
+    
     next()
 } )
 

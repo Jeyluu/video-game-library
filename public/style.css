@@ -12,7 +12,6 @@ body{
 
 }
 
-
 /* navbar */
 
 .nav-link {
@@ -21,6 +20,19 @@ body{
 
 }
 
+.navbar-nav{
+    margin-left: 1000px;
+}
+
+.nav-item{
+    
+    padding: 0 20px
+}
+
+.bold{
+    
+    color: red;
+}
 
 /* homepage */
 
@@ -30,11 +42,6 @@ body{
 
 }
 
-.card{
-
-    width: 300px;
-    
-}
 
 .card-img-top{
 
@@ -42,6 +49,10 @@ body{
 
 }
 
+
+.list-card{
+    font-size: 15px;
+}
 /* inscription */
 
 .password-register{

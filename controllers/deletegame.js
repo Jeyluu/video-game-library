@@ -8,7 +8,7 @@ module.exports = (req,res) => {
 
         function(err) {
             if(!err) {
-                res.redirect('/')
+                res.redirect('/jeu/ajout')
             } else {
                 res.send(err)
             }
