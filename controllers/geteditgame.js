@@ -14,7 +14,8 @@ module.exports = (req, res) => {
                     categorie: transfert.categorie,
                     plateforme: transfert.plateforme,
                     prix: transfert.prix,
-                    description: transfert.description
+                    description: transfert.description,
+                    pseudo: req.session.pseudo
                 })
             } else {
                 res.send(err)

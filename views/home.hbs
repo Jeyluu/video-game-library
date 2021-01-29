@@ -8,7 +8,8 @@
     </div>
 
     <div class="row">
-        {{#each posts}} <!-- posts est la donnée qui est dans l'objet sur home page JS-->
+        {{#each posts}}
+        <!-- posts est la donnée qui est dans l'objet sur home page JS-->
         <div class="col-md-3">
             <div class="card mb-5">
                 <img src="{{image}}" class="card-img-top" alt="...">
@@ -18,11 +19,39 @@
                         <li class="list-card">Jeux de type: {{categorie}}</li>
                         <li class="list-card">Pour {{plateforme}}</li>
                     </ul>
-                    <p><a href="">En savoir plus</a></p>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        En savoir plus
+                    </button>
+
+                    <!-- Modal -->
+                
+                    
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog .modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Configuration</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    {{description}}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger"
+                                        data-bs-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <h5>Prix de vente :{{prix}}€</h5>
                     <button class="btn btn-primary">J'achète</button>
-                    
-                    
+
+
                 </div>
             </div>
         </div>

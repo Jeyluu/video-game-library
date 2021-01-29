@@ -79,6 +79,9 @@ app.use('*', (req, res , next) => {
     next()
 } )
 
+//CONTROLLERS PANIER
+const displayPanier = require('./controllers/displaypanier')
+
 
 //CONTROLLERS ARTICLE
 const homePage = require('./controllers/homepage');
@@ -87,6 +90,7 @@ const postagame = require('./controllers/postgame');
 const geteditagame = require('./controllers/geteditgame')
 const editagame = require('./controllers/editgame')
 const deleteOnegame = require('./controllers/deletegame')
+
 
 //CONTROLLERS UTILISATEUR
 const adduser = require('./controllers/adduser')
@@ -108,6 +112,7 @@ app.delete('/jeu/:id', deleteOnegame)
 
 
 
+
 //Utilisateur & client
 app.get('/inscription', adduser)
 app.post('/inscription/utilisateur', userregister)
@@ -115,6 +120,9 @@ app.get('/connexion', displaylogin)
 app.post('/connexion/utilisateur', userlogin)
 app.get('/deconnexion', userLogout )
 
+
+//Panier
+app.get('/panier',connexion, displayPanier)
 
 app.listen(port, () => {
     console.log(`Connexion au port ${port}, le ${new Date().toLocaleString()}`);

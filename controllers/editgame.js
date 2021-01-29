@@ -21,7 +21,7 @@ module.exports = (req, res) => {
         //argument execution
         (err) => {
             if (!err) {
-                res.redirect('/')
+                res.redirect('/jeu/ajout')
 
             }
             else {
