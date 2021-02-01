@@ -1,22 +1,55 @@
 <div class="container">
-    <div>
-        <h1>panier</h1>
-        
-        <div class="panier-global">
-{{#each transfert}}
-            <div class="miniature">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center mt-5 mb-5">
+            <h1>Panier</h1>
+        </div>
+    </div>
+
+    <div class="container panier">
+        <div class="row">
+            <div class="col-md-12 ">
+
+                <div class="row">
+                    <div class="col-md-3 d-flex justify-content-center align-items-center miniature  ">
+                        <h4>Miniature</h4>
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center align-items-center infos ">
+                        <h4>Jeu</h4>
+                    </div>
+                    <div class=" col-md-3 d-flex justify-content-center align-items-center qte ">
+                        <h4>Quantité</h4>
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center align-items-center prix ">
+                        <h4>Prix</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 d-flex justify-content-center align-items-center miniature">
                 <img src="{{image}}" alt="">
             </div>
-            <div class="infos">
-                <div>
-                    {{nom}}
-                </div>
-                <div>
-                    {{prix}}
-                </div>
 
-            </div>{{/each}}
+            <div class="col-md-3 d-flex justify-content-center align-items-center infos ">
+                <p>{{nom}}</p>
+            </div>
+
+            <div class="col-md-3 d-flex justify-content-center align-items-center qte">
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-3 d-flex justify-content-center align-items-center prix">
+                <p>{{prix}}</p>
+            </div>
+
         </div>
-        
     </div>
+
 </div>
