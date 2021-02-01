@@ -31,7 +31,7 @@ mongoose.connect('mongodb://localhost:27017/videoGame',{
 //CONNECT-MONGO
 const mongoStore = MongoStore(expressSession)
 
-//EXPRESS-STATIC
+//EXPRESS-SESSION
 app.use(expressSession({
     secret: 'securite',
     name: 'pepite',
@@ -79,9 +79,8 @@ app.use('*', (req, res , next) => {
     next()
 } )
 
-//CONTROLLERS PANIER
-const displayPanier = require('./controllers/displaypanier')
-
+//CONTROLLERS COMPTE
+const displayProfil = require('./controllers/displayProfil')
 
 //CONTROLLERS ARTICLE
 const homePage = require('./controllers/homepage');
@@ -90,7 +89,7 @@ const postagame = require('./controllers/postgame');
 const geteditagame = require('./controllers/geteditgame')
 const editagame = require('./controllers/editgame')
 const deleteOnegame = require('./controllers/deletegame')
-
+const displayPanier = require('./controllers/displaypanier')
 
 //CONTROLLERS UTILISATEUR
 const adduser = require('./controllers/adduser')
@@ -109,6 +108,7 @@ app.post('/jeu/publication',connexion, postagame)
 app.get('/jeu/:id',geteditagame)
 app.put('/jeu/:id',editagame)
 app.delete('/jeu/:id', deleteOnegame)
+app.get('/panier/:id', displayPanier)
 
 
 
@@ -121,8 +121,9 @@ app.post('/connexion/utilisateur', userlogin)
 app.get('/deconnexion', userLogout )
 
 
-//Panier
-app.get('/panier',connexion, displayPanier)
+//Profil
+app.get('/profil',connexion, displayProfil)
+
 
 app.listen(port, () => {
     console.log(`Connexion au port ${port}, le ${new Date().toLocaleString()}`);

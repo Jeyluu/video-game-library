@@ -5,7 +5,7 @@ module.exports = (req, res) => {
     Game.findOne(
         { _id: req.params.id },
         function (err, transfert) {
-
+            console.log(transfert);
             if (!err) {
                 res.render('edition', {
                     
@@ -16,6 +16,7 @@ module.exports = (req, res) => {
                     prix: transfert.prix,
                     description: transfert.description,
                     pseudo: req.session.pseudo
+                    
                 })
             } else {
                 res.send(err)

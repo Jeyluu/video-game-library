@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="side-bar mt-5 ">
+        <div class="d-flex justify-content-around align-items-center ">
+            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab"
+                    aria-controls="v-pills-home" aria-selected="true">Modifier vos informations</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile" role="tab"
+                    aria-controls="v-pills-profile" aria-selected="false">Adresse de facturation</a>
+                <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" href="#v-pills-settings" role="tab"
+                    aria-controls="v-pills-settings" aria-selected="false">Notifications </a>
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                    aria-labelledby="v-pills-home-tab">
+                    <div class="col-md-12 mt-5 d-flex justify-content-center">
+
+                        <form action="/{{id}}?_method=PUT" method="POST" class="form-profil">
+                            <label>Nom</label>
+                            <input type="text" value={{prenom}}>
+                            <label>Pseudo</label>
+                            <input type="text" value={{pseudo}}>
+                            <label>mot de passe</label>
+                            <input type="password" value={{motdepasse}}>
+                            <a href="/"><button class="btn btn-primary mt-5">Sauvegarder les changements</button></a>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="col-md-12 mt-5 d-flex justify-content-center">
+
+                        <form action="/{{id}}?_method=PUT" method="POST" class="form-profil">
+                            <label>email facturation</label>
+                            <input type="text" value={{email}}>
+                            <a href="/"><button class="btn btn-primary mt-5">Sauvegarder le changement</button></a>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Recevoir  notre actualité par email (sorties de jeux importantes, offres Black Friday, etc..)</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                        <label class="form-check-label" for="flexSwitchCheckChecked"> Lors de l'ouverture des pré-commandes
+                        </label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheck" >
+                        <label class="form-check-label" for="flexSwitchCheck">Lors des opération spéciales (Black Friday, Noël...) et lors d'un LIVE exclusif</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled">
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Lors de la livraison d'une de mes précommandes</label>
+                    </div>
+                    <div>
+                        <a href="/"><button class="btn btn-primary mt-5">Sauvegarder les changements</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

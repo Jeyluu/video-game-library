@@ -1,11 +1,11 @@
-const usermodel = require('../models/users')
+const User = require('../models/users')
 const bcrypt = require('bcrypt')
 
 module.exports = (req, res) => {
 
     const { email, motdepasse } = req.body
 
-    usermodel.findOne({ email }, (err, user) => {
+    User.findOne({ email }, (err, user) => {
         if (user) {
             
             bcrypt.compare(motdepasse, user.motdepasse, (err, same) => {
@@ -13,8 +13,10 @@ module.exports = (req, res) => {
 
                     req.session.userId = user._id
                     req.session.pseudo = user.pseudo
-                    
-                    
+                    req.session.prenom = user.prenom
+                    req.session.motdepasse = user.motdepasse
+                    req.session.email = user.email
+
                     res.redirect('/')
                 }
                 else {
