@@ -90,6 +90,8 @@ const geteditagame = require('./controllers/geteditgame')
 const editagame = require('./controllers/editgame')
 const deleteOnegame = require('./controllers/deletegame')
 const displayPanier = require('./controllers/displaypanier')
+const GameCart = require('./controllers/postPanier')
+
 
 //CONTROLLERS UTILISATEUR
 const adduser = require('./controllers/adduser')
@@ -97,6 +99,7 @@ const userregister = require('./controllers/registeruser')
 const displaylogin = require('./controllers/displaylogin')
 const userlogin = require('./controllers/postloginuser')
 const userLogout = require('./controllers/userLogout')
+const displayContact = require('./controllers/displayContact')
 
 //ROUTES
 
@@ -108,7 +111,8 @@ app.post('/jeu/publication',connexion, postagame)
 app.get('/jeu/:id',geteditagame)
 app.put('/jeu/:id',editagame)
 app.delete('/jeu/:id', deleteOnegame)
-app.get('/panier/:id', displayPanier)
+app.get('/panier',connexion, displayPanier)
+app.post('/',connexion,GameCart)
 
 
 
@@ -119,7 +123,7 @@ app.post('/inscription/utilisateur', userregister)
 app.get('/connexion', displaylogin)
 app.post('/connexion/utilisateur', userlogin)
 app.get('/deconnexion', userLogout )
-
+app.get('/contact', displayContact)
 
 //Profil
 app.get('/profil',connexion, displayProfil)

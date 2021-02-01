@@ -132,6 +132,11 @@ body{
 
 }
 
+.miniature img {
+    height: 200px;
+    margin-bottom: 10px;
+}
+
 /* footer */
 
 footer{
@@ -179,6 +184,11 @@ footer ul li a:hover{
     margin-right: 100px;
 }
 
+.icons{
+
+    margin-right: 20px;
+
+}
 .reseaux h5 {
     padding: 10px 0;
     border-bottom: 1px solid #fff;
